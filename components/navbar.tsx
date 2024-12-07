@@ -58,7 +58,7 @@ export const Navbar = () => {
           </Link>
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="hidden md:flex">
+        <NavbarItem className="flex">
           <Auth />
         </NavbarItem>
       </NavbarContent>
