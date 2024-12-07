@@ -1,22 +1,52 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import DrinkCard from "@/app/count/DrinkCard";
+
 export default function Home() {
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Delay between children animations
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 }, // Start position (invisible, below)
+    visible: { opacity: 1, y: 0 }, // End position (visible, in place)
+  };
+
   return (
-    <section className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-8 md:py-10 rounded-3xl px-7 bg-foreground bg-opacity-10 backdrop-blur-3xl">
-      <DrinkCard image="/photos/drinks/tequila.png" name="Tequila" />
-      <DrinkCard image="/photos/drinks/cognac.png" name="Cognac" />
-      <DrinkCard image="/photos/drinks/whiskey.png" name="Whiskey" />
-      <DrinkCard image="/photos/drinks/vodka.png" name="Vodka" />
-      <DrinkCard image="/photos/drinks/gin.png" name="Gin" />
-      <DrinkCard image="/photos/drinks/rum.jpg" name="Rum" />
-      <DrinkCard
-        image="/photos/drinks/sagi.png"
-        name="Persian Empire Arak Saggi"
-      />
-      <DrinkCard image="/photos/drinks/sake.jpg" name="Sake" />
-      <DrinkCard isBeer image="/photos/drinks/beer.png" name="Beer" />
-      <DrinkCard isWine image="/photos/drinks/wine.png" name="Wine" />
-    </section>
+    <motion.section
+      animate="visible"
+      className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-8 md:py-10 rounded-3xl px-7 bg-foreground bg-opacity-10 backdrop-blur-3xl"
+      initial="hidden"
+      variants={containerVariants}
+    >
+      {[
+        { image: "/photos/drinks/tequila.png", name: "Tequila" },
+        { image: "/photos/drinks/cognac.png", name: "Cognac" },
+        { image: "/photos/drinks/whiskey.png", name: "Whiskey" },
+        { image: "/photos/drinks/vodka.png", name: "Vodka" },
+        { image: "/photos/drinks/gin.png", name: "Gin" },
+        { image: "/photos/drinks/rum.jpg", name: "Rum" },
+        {
+          image: "/photos/drinks/sagi.png",
+          name: "Persian Empire Arak Saggi",
+        },
+        { image: "/photos/drinks/sake.jpg", name: "Sake" },
+        { image: "/photos/drinks/beer.png", name: "Beer", isBeer: true },
+        { image: "/photos/drinks/wine.png", name: "Wine", isWine: true },
+      ].map((drink, index) => (
+        <motion.div key={index} variants={cardVariants}>
+          <DrinkCard {...drink} />
+        </motion.div>
+      ))}
+    </motion.section>
   );
 }
