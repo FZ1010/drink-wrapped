@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && prisma generate --no-engine",
+    "build": "next build",
     "start": "next start",
-    "lint": "eslint new-ver/my-nextui-app --ext .ts,.tsx -c .eslintrc.json --fix"
+    "lint": "eslint new-ver/my-nextui-app --ext .ts,.tsx -c .eslintrc.json --fix",
+    "postinstall": "prisma generate --no-engine"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.4",
