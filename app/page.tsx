@@ -1,10 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 import DrinkCard from "@/app/count/DrinkCard";
 
 export default function Home() {
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then((registration) => {
+          console.log("Service Worker registered:", registration);
+        })
+        .catch((error) => {
+          console.error("Service Worker registration failed:", error);
+        });
+    }
+  }, []);
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -17,8 +31,8 @@ export default function Home() {
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 50 }, // Start position (invisible, below)
-    visible: { opacity: 1, y: 0 }, // End position (visible, in place)
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (

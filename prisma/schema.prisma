@@ -1,6 +1,7 @@
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
@@ -8,14 +9,14 @@ generator client {
 }
 
 model User {
-  id            String          @id @default(auto()) @map("_id") @db.ObjectId
+  id            String             @id @default(auto()) @map("_id") @db.ObjectId
   name          String?
-  email         String?         @unique
+  email         String?            @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
-  consumption   ConsumptionRecord[] // Add a relation to ConsumptionRecord
+  consumption   ConsumptionRecord[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -67,7 +68,7 @@ model ConsumptionRecord {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
   userId     String   @db.ObjectId
   drinkName  String
-  type       String   // e.g. "shot", "bottle", "glass", "can", "sixpack"
+  type       String
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 
