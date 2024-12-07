@@ -3,16 +3,20 @@
 import React from "react";
 import { Button } from "@nextui-org/button";
 import { signIn } from "next-auth/react";
-import { IoLogIn } from "react-icons/io5";
+import { Icon } from "@iconify-icon/react";
 
 const SignIn = () => {
   return (
     <Button
-      startContent={<IoLogIn size={20} />}
+      isIconOnly
       variant={"flat"}
       onPress={() => signIn("google", { redirectTo: "/count" })}
     >
-      Login
+      <Icon
+        className={"text-default-500"}
+        icon="solar:login-linear"
+        width={24}
+      />
     </Button>
   );
 };

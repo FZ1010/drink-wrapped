@@ -58,7 +58,7 @@ export const Navbar = () => {
           </Link>
           <ThemeSwitch />
         </NavbarItem>
-        <NavbarItem className="flex">
+        <NavbarItem className="hidden sm:flex">
           <Auth />
         </NavbarItem>
       </NavbarContent>
@@ -68,6 +68,9 @@ export const Navbar = () => {
           <GithubIcon className="text-default-500" />
         </Link>
         <ThemeSwitch />
+        <NavbarItem className="sm:flex">
+          <Auth />
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarMenu>
