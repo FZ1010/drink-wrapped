@@ -57,7 +57,7 @@ export default function RootLayout({
             />
           </div>
           <div className="relative flex flex-col h-screen">
-            <main className="container mx-auto pt-10 px-1 sm:px-3 flex-grow z-10">
+            <main className="container mx-auto pt-10 px-2 sm:px-3 flex-grow z-10">
               {children}
             </main>
             <footer className="w-full flex items-center justify-center py-3">
