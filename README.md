@@ -1,8 +1,10 @@
-# Next.js & NextUI Template
+# Drink Wrapped
 
-This is a template for creating applications using Next.js 14 (app directory) and NextUI (v2).
+This is a template-based application using **Next.js 15** (app directory) and **NextUI v2**, customized for **Drink Wrapped**. The application provides users with yearly statistics about their drinking habits, inspired by "Spotify Wrapped."
 
-[Try it on CodeSandbox](https://githubbox.com/nextui-org/next-app-template)
+[Try it here!](https://drink-wrapped.vercel.app/)
+
+---
 
 ## Technologies Used
 
@@ -11,43 +13,54 @@ This is a template for creating applications using Next.js 14 (app directory) an
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Tailwind Variants](https://tailwind-variants.org)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
+- [Framer Motion](https://www.framer.com/motion/) (using alpha version 12.0.0)
 - [next-themes](https://github.com/pacocoursey/next-themes)
+- [Prisma](https://www.prisma.io/)
+
+---
+
+## Features
+
+- **Yearly Drink Statistics**: Just like Spotify Wrapped, get detailed insights into your drink consumption at the end of the year.
+- **Modern UI**: Built using NextUI and Tailwind CSS for a sleek and responsive user experience.
+- **Progressive Web App (PWA)**: Installable on devices for an app-like experience.
+- **Animations**: Smooth and modern transitions powered by Framer Motion.
+
+---
 
 ## How to Use
 
-### Use the template with create-next-app
-
-To create a new project based on this template using `create-next-app`, run the following command:
+### Clone the Repository
 
 ```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
+git clone https://github.com/FZ1010/drink-wrapped.git
 ```
 
-### Install dependencies
+### Install Dependencies
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+Use your preferred package manager. Example with `npm`:
 
 ```bash
 npm install
 ```
 
-### Run the development server
+### Run the Development Server
 
 ```bash
 npm run dev
 ```
 
-### Setup pnpm (optional)
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+## Prisma Setup
 
-```bash
-public-hoist-pattern[]=*@nextui-org/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
-## License
-
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+This app uses Prisma for database interactions. To set up:
+1. Configure your `schema.prisma` file.
+2. Push your schema to the database:
+   ```bash
+   npx prisma db push
+   ```
+3. Generate the Prisma client:
+   ```bash
+   npx prisma generate
+   ```
