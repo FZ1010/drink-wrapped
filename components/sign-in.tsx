@@ -7,11 +7,7 @@ import { Icon } from "@iconify-icon/react";
 
 const SignIn = () => {
   return (
-    <Button
-      isIconOnly
-      variant={"flat"}
-      onPress={() => signIn("google", { redirectTo: "/count" })}
-    >
+    <Button isIconOnly variant={"flat"} onPress={() => signIn("google")}>
       <Icon
         className={"text-default-500"}
         icon="solar:login-linear"
