@@ -2,13 +2,13 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
 import { fontMedievalSharp, fontMono, fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
-
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -45,7 +45,6 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <Navbar />
-
           <div
             aria-hidden="true"
             className="absolute inset-x-0 -top-40 -z-0 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -61,6 +60,7 @@ export default function RootLayout({
           <div className="relative flex flex-col h-screen">
             <main className="container mx-auto pt-10 px-2 sm:px-3 flex-grow z-10">
               {children}
+              <SpeedInsights />
             </main>
             <footer className="w-full flex items-center justify-center py-3">
               <Link
