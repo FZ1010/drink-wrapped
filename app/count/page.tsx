@@ -17,6 +17,7 @@ export default function Home() {
       <DrinkCard image="/photos/drinks/sake.jpg" name="Sake" />
       <DrinkCard isBeer image="/photos/drinks/beer.png" name="Beer" />
       <DrinkCard isWine image="/photos/drinks/wine.png" name="Wine" />
+      {/*    Drinks End*/}
     </section>
   );
 }
