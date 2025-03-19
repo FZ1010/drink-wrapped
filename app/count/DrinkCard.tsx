@@ -9,6 +9,7 @@ import { LuContainer } from "react-icons/lu";
 import { FaWineBottle } from "react-icons/fa6";
 import { Button } from "@nextui-org/button";
 import { signIn } from "next-auth/react";
+import NextImage from "next/image";
 
 interface DrinkCardProps {
   name: string;
@@ -146,8 +147,16 @@ const DrinkCard = ({
       <Image
         removeWrapper
         alt={name}
+        as={NextImage}
         className="z-0 w-full h-full  -translate-y-6 object-cover hover:scale-110 transition-transform duration-300"
+        height={400}
+        quality={50}
         src={image}
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
+        width={400}
       />
       <CardFooter className="border-white/20 border-1 py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
         <div className={"flex w-full justify-between"}>{renderButtons()}</div>
