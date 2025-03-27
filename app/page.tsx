@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Alert } from "@nextui-org/alert";
+import { Alert } from "@heroui/alert";
 
 import DrinkCard from "@/app/count/DrinkCard";
 import { userName } from "@/utils/helper";

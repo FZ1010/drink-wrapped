@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { Card, CardFooter, CardHeader } from "@nextui-org/card";
-import { Image } from "@nextui-org/image";
+import { Card, CardFooter, CardHeader } from "@heroui/card";
+import { Image } from "@heroui/image";
 import { FaCheck, FaGlassWhiskey, FaWineGlassAlt } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
-import { Tooltip } from "@nextui-org/tooltip";
+import { Tooltip } from "@heroui/tooltip";
 import { GiSodaCan } from "react-icons/gi";
 import { LuContainer } from "react-icons/lu";
 import { FaWineBottle } from "react-icons/fa6";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import { signIn } from "next-auth/react";
 import NextImage from "next/image";
 

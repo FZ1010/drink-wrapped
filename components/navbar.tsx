@@ -5,9 +5,9 @@ import {
   NavbarBrand,
   NavbarItem,
   NavbarMenuItem,
-} from "@nextui-org/navbar";
-import { Link } from "@nextui-org/link";
-import { link as linkStyles } from "@nextui-org/theme";
+} from "@heroui/navbar";
+import { Link } from "@heroui/link";
+import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 
@@ -30,7 +30,7 @@ export const Navbar = () => {
           {siteConfig.navItems.map((item) => (
             // @ts-ignore
 
-            <NavbarItem key={item.href}>
+            (<NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
@@ -43,11 +43,10 @@ export const Navbar = () => {
                 {/* @ts-ignore */}
                 {item.label}
               </NextLink>
-            </NavbarItem>
+            </NavbarItem>)
           ))}
         </ul>
       </NavbarContent>
-
       <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
@@ -62,7 +61,6 @@ export const Navbar = () => {
           <Auth />
         </NavbarItem>
       </NavbarContent>
-
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <Link isExternal aria-label="Github" href={siteConfig.links.github}>
           <GithubIcon className="text-default-500" />
@@ -72,7 +70,6 @@ export const Navbar = () => {
           <Auth />
         </NavbarItem>
       </NavbarContent>
-
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (

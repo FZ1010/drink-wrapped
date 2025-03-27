@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { signOut } from "next-auth/react";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import { Icon } from "@iconify-icon/react";
 
 const SignOut = () => {
